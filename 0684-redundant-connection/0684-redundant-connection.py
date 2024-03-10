@@ -1,21 +1,5 @@
 class Solution:
     def findRedundantConnection(self, edges: List[List[int]]) -> List[int]:
-        # visit = set()
-        # edges.sort()
-        # for i in range(len(edges)):
-        #     visit = set()
-        #     visit.add(edges[i][0])
-        #     visit.add(edges[i][1])
-            
-        #     for k in range(i+1,len(edges)):
-        #         a,b = edges[k]
-        #         if a in visit and b in visit:
-        #             return edges[k]
-        #         elif a in visit:
-        #             visit.add(b)
-        #         elif b in visit:
-        #             visit.add(a)
-
         parent = [i for i in range(len(edges)+1)]
         rank = [1] * (len(edges)+1)
 
@@ -25,7 +9,6 @@ class Solution:
             while(p!= parent[p]):
                 parent[p] = parent[parent[p]]
                 p = parent[p]
-
             return p
 
         def union(n1,n2):
