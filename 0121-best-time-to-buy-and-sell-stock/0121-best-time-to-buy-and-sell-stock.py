@@ -2,13 +2,11 @@ class Solution(object):
     def maxProfit(self, prices):
         p =0
         maxp =0
-        l=0
-        r=1
+        l,r=0,1
         while r<len(prices):
 
             if prices[l]<prices[r]:
-                p = prices[r]-prices[l]
-                maxp = max(maxp,p)
+                maxp = max(maxp,prices[r]-prices[l])
             else:
                 l=r
             r+=1
