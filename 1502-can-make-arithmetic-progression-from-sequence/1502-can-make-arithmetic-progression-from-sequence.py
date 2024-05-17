@@ -3,9 +3,10 @@ class Solution:
         
         arr.sort()
         diff = arr[1] - arr[0]
-
-        for i in range(1,len(arr)):
-            if arr[i] - arr[i-1] != diff:
+        prev = arr[1]
+        for i in arr[2:]:
+            if i - prev != diff:
                 return False
+            prev = i
         
         return True
